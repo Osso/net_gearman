@@ -406,7 +406,7 @@ class Net_Gearman_Connection
     {
         return (is_null($conn) !== true &&
                 is_resource($conn) === true &&
-                strtolower(get_resource_type($conn)) == 'socket');
+                in_array(strtolower(get_resource_type($conn)), ['socket', 'stream']));
     }
 
     /**
